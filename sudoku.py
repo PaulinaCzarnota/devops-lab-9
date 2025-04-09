@@ -1,11 +1,12 @@
 def is_valid(board, row, col, num):
-    """Check if placing num at (row, col) is valid according to Sudoku rules."""
-    # Check if number is in the same row or column
+    """
+    Check if placing 'num' at board[row][col] is valid according to Sudoku rules.
+    """
     for i in range(9):
         if board[row][i] == num or board[i][col] == num:
             return False
 
-    # Check if number is in the 3x3 square
+    # Check the 3x3 subgrid
     start_row, start_col = 3 * (row // 3), 3 * (col // 3)
     for i in range(start_row, start_row + 3):
         for j in range(start_col, start_col + 3):
@@ -14,24 +15,29 @@ def is_valid(board, row, col, num):
 
     return True
 
+
 def solve(board):
-    """Recursive backtracking solver that modifies the board in place."""
+    """
+    Recursively solve the Sudoku puzzle using backtracking.
+    Returns True if solved, False otherwise.
+    """
     for row in range(9):
         for col in range(9):
-            if board[row][col] == 0:  # Empty cell
+            if board[row][col] == 0:  # Find empty cell
                 for num in range(1, 10):
                     if is_valid(board, row, col, num):
-                        board[row][col] = num  # Try this number
-
-                        if solve(board):      # Recur with this number
+                        board[row][col] = num
+                        if solve(board):
                             return True
-                        board[row][col] = 0   # Backtrack
-
+                        board[row][col] = 0  # Backtrack
                 return False  # No valid number found
-    return True  # Board is fully solved
+    return True
+
 
 def is_board_valid(board):
-    """Validate the initial board to ensure it's logically solvable."""
+    """
+    Validate that the initial board doesn't violate Sudoku rules.
+    """
     for row in range(9):
         for col in range(9):
             num = board[row][col]
@@ -42,13 +48,13 @@ def is_board_valid(board):
                 board[row][col] = num
     return True
 
+
 def solve_sudoku(board):
     """
-    Main function to validate the board and then solve it.
-    Returns the solved board or None if unsolvable or invalid.
+    Solve the Sudoku puzzle if valid. Return solved board or None.
     """
     if not is_board_valid(board):
         return None
     if solve(board):
         return board
-    return None
+    return None  # If unsolvable
