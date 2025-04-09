@@ -16,7 +16,7 @@ The goal of this lab is to demonstrate the ability to:
 - Used test cases inspired by:
   - [sudoku.com](https://sudoku.com)
   - [anysudokusolver.com](https://anysudokusolver.com)
-  - [RosettaCode - Python Sudoku](https://rosettacode.org/wiki/Sudoku#Python)
+  - [Rosetta Code - Python Sudoku](https://rosettacode.org/wiki/Sudoku#Python)
 
 # Technologies Used
 
