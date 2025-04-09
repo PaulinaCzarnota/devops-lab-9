@@ -33,7 +33,7 @@ On every push or pull request to the `main` branch, GitHub Actions will automati
 - Run all unit tests using `python -m unittest discover`
 - Validate that the code runs successfully and passes all test cases
 
-This lab highlights the importance of **automated testing** and **CI/CD pipelines** in modern software development workflows.
+This lab highlights the importance of automated testing and CI/CD pipelines in modern software development workflows.
 
 # How to Run Locally (Optional)
 
