@@ -1,4 +1,4 @@
-This repository contains my Lab 9 solution for the Introduction to DevOps module in the third year of the Computer Science course at Technological University Dublin (TU Dublin).
+This repository contains my Lab 9 - Software Unit Testing solution for the Introduction to DevOps module in the third year of the Computer Science course at Technological University Dublin.
 
 # Overview
 
